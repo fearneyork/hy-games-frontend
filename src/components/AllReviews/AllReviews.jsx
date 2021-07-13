@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { getAllReviews } from '../../utils/api';
 
 function AllReviews() {
-    const [allReviewContent, setallReviewContent] = useState([])
+    const [allReviewContent, setallReviewContent] = useState([]);
+    const [filterArgs, setFilterArgs] = useState({})
 
     useEffect(() => {
         getAllReviews().then((allReviewsFromApi) =>{
@@ -12,7 +13,7 @@ function AllReviews() {
     }, [])
 
     return (
-        <div className="AllReviews">
+        <div className="all-reviews">
             <h2>All Reviews</h2>
             <ul>
                 {allReviewContent.map((review) => {
@@ -20,7 +21,7 @@ function AllReviews() {
                     if (review.review_body.length > 75) reviewBody = `${review.review_body.slice(0,75)}...`
                     else reviewBody = review.review_body
                     return (
-                        <li key={review.review_id} >
+                        <li key={review.review_id} className="review-card">
                             <Link to={`/reviews/${review.review_id}`} >{review.title}</Link>
                             <p>{reviewBody}</p>
                             <p>Votes: {review.votes}</p>
