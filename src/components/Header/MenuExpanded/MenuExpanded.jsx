@@ -18,7 +18,12 @@ function MenuExpanded() {
             <h3>Categories</h3>
                 {categories.map((category) => {
                     return (
-                        <Link to="" ><li key={category.slug}>{category.slug}</li></Link>
+                        <Link key={category.slug} to={{
+                            pathname: `/reviews/categories/${category.slug}`,
+                            state: {
+                                category: category.slug
+                            }
+                            }} ><li>{category.slug}</li></Link>
                     )
                 })}
         </div>

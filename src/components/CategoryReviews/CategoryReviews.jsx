@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
+import FilterMenu from '../Filter Menu/FilterMenu'
 import { getAllReviews } from '../../utils/api';
-import FilterMenu from '../Filter Menu/FilterMenu';
 import SingleReviewCard from '../SingleReviewCard/SingleReviewCard';
+import { useParams } from 'react-router';
 
 
 
-function AllReviews() {
-    
-    const [allReviewContent, setallReviewContent] = useState([]);
+function CategoryReviews({ catState }) {
+    const [categoryReviewContent, setCategoryReviewContent] = useState([]);
     const [sortFilterArg, setSortFilterArg] = useState("created_at");
     const [orderFilterArg, setOrderFilterArg] = useState("desc");
 
-    
     useEffect(() => {
-        getAllReviews(sortFilterArg, orderFilterArg).then((allReviewsFromApi) =>{
-            setallReviewContent(allReviewsFromApi)
+        getAllReviews(sortFilterArg, orderFilterArg, catState.category).then((allReviewsFromApi) => {
+            setCategoryReviewContent(allReviewsFromApi)
         })
-    }, [sortFilterArg, orderFilterArg])
+    }, [sortFilterArg, orderFilterArg, catState.category])
+
 
     return (
         <>
             <FilterMenu setSortFilterArg={setSortFilterArg} setOrderFilterArg={setOrderFilterArg}></FilterMenu>
             <div className="all-reviews">
-                <h2>All Reviews</h2>
+                <h2>X CAT Reviews</h2>
                 <ul>
-                    {allReviewContent.map((review) => {
+                {categoryReviewContent.map((review) => {
                         let reviewBody = '';
                         if (review.review_body.length > 75) reviewBody = `${review.review_body.slice(0,75)}...`
                         else reviewBody = review.review_body
@@ -38,4 +38,4 @@ function AllReviews() {
     )
 }
 
-export default AllReviews
+export default CategoryReviews

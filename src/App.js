@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import ReviewsByCategory from './Pages/ReviewsByCategory/ReviewsByCategory';
 import Home from "./Pages/Home/Home"
 import Review from './Pages/Review/Review';
 
@@ -13,9 +14,10 @@ function App() {
         <Route exact path="/reviews/:review_id">
           <Review></Review>
         </Route>
-        {/* <Route exact path="/categories">
-
-        </Route> */}
+        <Route exact path="/reviews/categories/:category" render={(props) => 
+          <ReviewsByCategory catState={props.location.state} />
+        }>
+        </Route>
       </Switch>
     </Router>
   );
