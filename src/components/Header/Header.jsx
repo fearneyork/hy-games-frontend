@@ -1,15 +1,14 @@
 import React from 'react'
-
+import Menu from "./Menu/Menu"
 function Header() {
     return (
         <>
             <header>
-                <button>Menu</button>
+                <Menu></Menu>
                 <h1>hy-games</h1>
                 <div>Profile</div>
             </header>
             <nav>
-                Expanded Menu
             </nav>
         </>
     )

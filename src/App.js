@@ -13,6 +13,9 @@ function App() {
         <Route exact path="/reviews/:review_id">
           <Review></Review>
         </Route>
+        {/* <Route exact path="/categories">
+
+        </Route> */}
       </Switch>
     </Router>
   );
