@@ -33,3 +33,8 @@ export const postCommentByReviewId = async ( review_id, body, created_by ) => {
     const comment = data.comment[0]
     return comment;
 }
+
+export const patchVote = async ( review_id, increaseAmount ) => {
+    const incVotes = {inc_votes: increaseAmount}
+    await hyGamesApi.patch(`/reviews/${review_id}`, incVotes);
+}

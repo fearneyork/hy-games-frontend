@@ -10,13 +10,14 @@ function AllReviews() {
     const [allReviewContent, setallReviewContent] = useState([]);
     const [sortFilterArg, setSortFilterArg] = useState("created_at");
     const [orderFilterArg, setOrderFilterArg] = useState("desc");
+    const [_voted, setVoted] = useState(0);
 
     
     useEffect(() => {
         getAllReviews(sortFilterArg, orderFilterArg).then((allReviewsFromApi) =>{
             setallReviewContent(allReviewsFromApi)
         })
-    }, [sortFilterArg, orderFilterArg])
+    }, [sortFilterArg, orderFilterArg, _voted])
 
     return (
         <>
@@ -29,7 +30,7 @@ function AllReviews() {
                         if (review.review_body.length > 75) reviewBody = `${review.review_body.slice(0,75)}...`
                         else reviewBody = review.review_body
                         return (
-                            <SingleReviewCard key={review.review_id} review={review} reviewBody={reviewBody} />
+                            <SingleReviewCard setVoted={setVoted} isHome={true} sortFilterArg={sortFilterArg} orderFilterArg={orderFilterArg} setallReviewContent={setallReviewContent} key={review.review_id} review={review} reviewBody={reviewBody} />
                         )
                     })}
                 </ul>

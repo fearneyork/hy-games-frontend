@@ -9,6 +9,7 @@ import SingleReviewCard from '../SingleReviewCard/SingleReviewCard';
 function ReviewById() {
     const [reviewContent, setReviewContent] = useState({});
     const [commentContent, setCommentContent] = useState([]);
+    const [_voted, setVoted] = useState(0);
 
     const { review_id } = useParams();
 
@@ -19,11 +20,12 @@ function ReviewById() {
         getCommentByReviewId(review_id).then((commentContentFromApi) => {
             setCommentContent(commentContentFromApi);
         })
-    }, [review_id]);
+
+    }, [review_id, _voted]);
 
     return (
         <>
-            <SingleReviewCard review={reviewContent} reviewBody={reviewContent.review_body}></SingleReviewCard>
+            <SingleReviewCard setVoted={setVoted} isHome={false} review={reviewContent} reviewBody={reviewContent.review_body}></SingleReviewCard>
             <AddComment setCommentContent={setCommentContent}></AddComment>
             {commentContent.length > 0 ? <CommentSection commentContent={commentContent}></CommentSection> : <NoComments review={reviewContent} ></NoComments>}
         </>
