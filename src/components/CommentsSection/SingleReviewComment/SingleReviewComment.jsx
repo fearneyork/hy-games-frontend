@@ -1,7 +1,6 @@
 import React from 'react'
 
-function SingleReviewComment( comment ) {
-    console.log(comment)
+function SingleReviewComment({ comment }) {
     return (
         <>
             <h3>{comment.author}</h3>

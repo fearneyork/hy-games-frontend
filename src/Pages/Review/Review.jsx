@@ -5,7 +5,6 @@ import ReviewById from '../../components/ReviewById/ReviewById'
 function Review() {
     return (
         <>
-            SINGLE REVIEW
             <Header></Header>
             <ReviewById></ReviewById>
         </>
