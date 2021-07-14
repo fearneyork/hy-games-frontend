@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import FilterMenu from '../Filter Menu/FilterMenu'
 import { getAllReviews } from '../../utils/api';
 import SingleReviewCard from '../SingleReviewCard/SingleReviewCard';
-import { useParams } from 'react-router';
 
 
 
