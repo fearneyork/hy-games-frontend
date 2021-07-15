@@ -21,7 +21,7 @@ function AddComment({ setCommentContent }) {
     return (
         <form>
             <h3>Add a comment</h3>
-            <textarea type="text" id="add-comment" className="comment=box" hasValue={hasValue} onChange={handleChange} required></textarea>
+            <textarea type="text" id="add-comment" className="comment=box" onChange={handleChange} required></textarea>
             <label htmlFor="add-comment"></label>
             <button type="submit" disabled={hasValue ? false : true} onClick={
                 async (event) => {

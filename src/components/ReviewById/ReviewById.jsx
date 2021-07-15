@@ -27,6 +27,11 @@ function ReviewById() {
 
     }, [review_id, _voted]);
 
+    // Breaks if uncommented
+    // if (!isLoading && Object.keys(reviewContent).length === 0) {
+    //     console.log(Object.keys(reviewContent).length);
+    //     return(<Redirect to="/404" />)
+    // }
     if (!isLoading && Object.keys(reviewContent).length !== 0) {
         console.log(reviewContent);
         console.log(Object.keys(reviewContent).length);
@@ -39,10 +44,6 @@ function ReviewById() {
             </>
         )
     } 
-    // if (!isLoading && Object.keys(reviewContent).length === 0) {
-    //     console.log(Object.keys(reviewContent).length);
-    //     return(<Redirect to="/404" />)
-    // }
 
     return <p>is Loading...</p>
 }
