@@ -3,6 +3,7 @@ import './App.css';
 import ReviewsByCategory from './Pages/ReviewsByCategory/ReviewsByCategory';
 import Home from "./Pages/Home/Home"
 import Review from './Pages/Review/Review';
+import Error from './Pages/Error/Error';
 import { useState } from 'react';
 import { UserContext } from './contexts/User';
 
@@ -21,6 +22,9 @@ return (
           <Route exact path="/reviews/categories/:category" render={(props) => 
             <ReviewsByCategory catState={props.location.state} />
           }>
+          </Route>
+          <Route path="/404">
+            <Error></Error>
           </Route>
         </Switch>
       </Router>
