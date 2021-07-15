@@ -9,6 +9,7 @@ import { UserContext } from './contexts/User';
 
 function App() {
 const [user, setUser] = useState('mallionaire')
+
 return (
   <UserContext.Provider value={{ user, setUser }}>
       <Router>
@@ -19,11 +20,10 @@ return (
           <Route exact path="/reviews/:review_id">
             <Review></Review>
           </Route>
-          <Route exact path="/reviews/categories/:category" render={(props) => 
-            <ReviewsByCategory catState={props.location.state} />
-          }>
+          <Route exact path="/reviews/categories/:category" >
+            <ReviewsByCategory />
           </Route>
-          <Route path="/404">
+          <Route path="*">
             <Error></Error>
           </Route>
         </Switch>

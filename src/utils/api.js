@@ -15,8 +15,8 @@ export const getCategories = async () => {
 };
 
 export const getReviewById = async ( review_id ) => {
-    const { data } = await hyGamesApi.get(`/reviews/${review_id}`);
-    return data.review;
+        const { data } = await hyGamesApi.get(`/reviews/${review_id}`)
+        return data.review;
 };
 
 export const getCommentByReviewId = async ( review_id ) => {
