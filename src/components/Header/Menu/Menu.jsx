@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
 
-import Expandable from '../../Expandable/Expandable'
-import MenuExpanded from '../MenuExpanded/MenuExpanded'
+import Expandable from "../../Expandable/Expandable";
+import MenuExpanded from "../MenuExpanded/MenuExpanded";
+import "./Menu.css";
 
 function Menu() {
     return (
-        <div>
-            <Expandable name="Menu">
-                <MenuExpanded></MenuExpanded>
-            </Expandable>
-        </div>
-    )
+        <Expandable location="menu">
+            <MenuExpanded></MenuExpanded>
+        </Expandable>
+    );
 }
 
-export default Menu
+export default Menu;

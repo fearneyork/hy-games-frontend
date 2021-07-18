@@ -1,15 +1,17 @@
-import React from 'react'
-import { useContext } from 'react';
-import { UserContext } from '../../../contexts/User'
+import React from "react";
+import { useContext } from "react";
+import { UserContext } from "../../../contexts/User";
+import "./Profile.css";
 
 function Profile() {
-    const {user} = useContext(UserContext);
+    const { userAvatar } = useContext(UserContext);
     return (
-        <div>
-            <img className="avatar" src="https://cdn.kapwing.com/thumbnail_5f1860a18f64e80015819b7b_192004.jpg" alt="avatar"></img>
-            <p>{user}</p>
-        </div>
-    )
+        <img
+            className="avatar"
+            src={userAvatar}
+            alt="avatar"
+        ></img>
+    );
 }
 
-export default Profile
+export default Profile;

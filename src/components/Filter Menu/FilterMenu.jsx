@@ -7,7 +7,7 @@ function FilterMenu({ setSortFilterArg, setOrderFilterArg }) {
     const [orderVal, setOrderVal] = useState("desc");
 
     return (
-        <Expandable name="Filter">
+        <Expandable location="filter">
             <form>
                 <section className="sort-filter-section">
                     <p>Filter by:</p>

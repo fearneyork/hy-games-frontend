@@ -1,0 +1,15 @@
+.expandable-button {
+    background: none;
+    border: none;
+}
+
+.expandable-button--filter {
+    background-color: #FE9000;
+    color: #14213D;
+}
+
+.expandable-button--menu {
+    color: white;
+    display: flex;
+    align-items: center;
+}

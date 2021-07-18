@@ -1,0 +1,42 @@
+.menu-expanded {
+    position: absolute;
+    background-color: #7D70BA;
+    top: 75px;
+    width: calc(100vw - 4rem);
+    color: white;
+    padding: 1rem 2rem 1.5rem;
+    box-shadow: -1px 5px 7px -3px rgba(0,0,0,0.67);
+    min-height: 13rem;
+}
+
+.menu-expanded a {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.menu-expanded__subheading {
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.menu-expanded__subheading svg, .menu-expanded a svg {
+    margin-right: .5rem;
+}
+
+.menu-expanded__list {
+    list-style: none;
+    padding-left: 2rem;
+}
+
+.menu-expanded__list-item {
+    padding: .5rem 0;
+}
+.menu-expanded__list-item a {
+    font-size: 1rem;
+}
+
+.menu-expanded__home-link {
+    display: flex;
+    align-items: center;
+}

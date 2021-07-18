@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { patchVote } from '../../utils/api'
+import "./SingleReviewCard.css"
 
 
 function SingleReviewCard({ setVoted, isHome, review, reviewBody }) {
